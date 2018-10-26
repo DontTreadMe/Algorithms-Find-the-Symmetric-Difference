@@ -1,4 +1,4 @@
-const sym = (...args) => {  
+const sym = (...args) => {
   const sym2arr = (arr1, arr2) => {
     const tempRes = [];
     for (const x of arr1) {
@@ -21,4 +21,4 @@ const sym = (...args) => {
   return res;
 }
 
-sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]);
+sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3]);

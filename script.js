@@ -1,22 +1,24 @@
-sym = (...args) => {
-  
-  sym2arr = (arr1, arr2) => {
-    const res = [];
+const sym = (...args) => {  
+  const sym2arr = (arr1, arr2) => {
+    const tempRes = [];
     for (const x of arr1) {
-      //console.log(x);
-      if (arr2.indexOf(x) === -1 && res.indexOf(x) === -1) {
-        res.push(x)
+      if (arr2.indexOf(x) === -1 && tempRes.indexOf(x) === -1) {
+        tempRes.push(x)
       }
     }
     for (const x of arr2) {
-      if (arr1.indexOf(x) === -1 && res.indexOf(x) === -1) {
-        res.push(x)
+      if (arr1.indexOf(x) === -1 && tempRes.indexOf(x) === -1) {
+        tempRes.push(x)
       }
     }
-    console.log(res.sort((a, b) => a-b));
-    return res.sort((a, b) => a-b);
+    return tempRes.sort((a, b) => a-b);
   }
-  sym2arr(args[0], args[1]);
+  let res =  sym2arr(args[0], args[1]);
+  for (let i = 2; i < args.length; i++) {
+    res = sym2arr(res, args[i]);
+  }
+  console.log(`res: ${res}`);
+  return(res);
 }
 
-sym([1, 2, 3, 3], [5, 2, 1, 4]);
+sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]);

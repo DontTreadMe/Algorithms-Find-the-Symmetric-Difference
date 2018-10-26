@@ -18,7 +18,7 @@ const sym = (...args) => {
     res = sym2arr(res, args[i]);
   }
   console.log(`res: ${res}`);
-  return(res);
+  return res;
 }
 
 sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]);
